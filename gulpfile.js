@@ -18,7 +18,7 @@ gulp.task('lint', function() {
 
 //Compile Sass
 gulp.task('sass', function() {
-    return gulp.src('./client/*.scss')
+    return gulp.src('./client/scss/main.scss')
         .pipe(sass())
             .on('error', sass.logError)
         .pipe(concat('main.css'))
@@ -26,7 +26,12 @@ gulp.task('sass', function() {
 });
 
 gulp.task('scripts', function() {
-    return gulp.src('./client/*.js')
+    return gulp.src([
+        
+        './client/*.js',
+        './client/features/**/*.js'
+    
+    ])
         .pipe(concat('all.js'))
         .pipe(gulp.dest('dist'))
         .pipe(rename('all.min.js'))
