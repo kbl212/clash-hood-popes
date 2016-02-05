@@ -10,3 +10,10 @@ body {
     background-color: transparent !important;
     background: inherit;
 }
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 5px;
+    background-color: #fff;
+}
